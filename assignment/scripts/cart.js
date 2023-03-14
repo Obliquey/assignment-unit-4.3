@@ -20,8 +20,10 @@ console.log('What is in my basket?', basket);
 
 // create function listItems, which loops over basket array and lists each individual item in array
 function listItems() {
-    for (let i = 0; i < basket.length; i++) {
-    console.log(basket[i]);
-}
+    // loop through basket array
+    for (item of basket) {
+        // print individual item in array
+        console.log(item);
+    }
 }
 console.log(listItems());
