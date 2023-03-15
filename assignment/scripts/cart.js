@@ -8,9 +8,9 @@ let basket = [];
 const maxItems = 5;
 
 // create function addItem, which adds given string input to basket array, returns true
-function addItem (item) {
+function addItem(item) {
     // add given item to basket array
-    if (isFull() == false){
+    if (isFull() == false) {
         basket.push(item);
         return true;
     }
@@ -18,6 +18,7 @@ function addItem (item) {
         return false;
     }
 }
+
 addItem('chips');
 addItem('carrots');
 
@@ -32,20 +33,22 @@ function listItems() {
         // print individual item in array
         console.log(item);
     }
-    return "Finished";
 }
-console.log(listItems());
+listItems();
 
 // create function empty, which emptys/resets the basket array
-function empty () {
-    basket.length = 0;
+function empty() {
+    basket = [];
     return "Basket emptied";
 }
+
 console.log(empty());
+
 addItem('chips');
 addItem('cups');
 addItem('blankets');
 addItem('copper');
+
 console.log(basket);
 
 
@@ -64,8 +67,10 @@ console.log("Checking if basket is full:", isFull());
 // create function removeItem, to remove the given item from basket array. If no matching item is found within the array, return null
 
 function removeItem(item) {
-    if (basket.includes(item) == true) {
-        basket.splice(basket.indexOf(item), 1)
+
+    //could also store .indexOf in const, then check that const is greater than zero. If so, remove from array.
+    if (basket.includes(item)) {
+        basket.splice(basket.indexOf(item), 1);
         return item;
     }
     else {
@@ -74,4 +79,4 @@ function removeItem(item) {
 }
 
 console.log("Checking if removeItem works:", removeItem('cups'));
-console.log(basket)
+console.log(basket);
