@@ -32,7 +32,7 @@ function listItems() {
         // print individual item in array
         console.log(item);
     }
-    return "Finshed";
+    return "Finished";
 }
 console.log(listItems());
 
@@ -64,16 +64,14 @@ console.log("Checking if basket is full:", isFull());
 // create function removeItem, to remove the given item from basket array. If no matching item is found within the array, return null
 
 function removeItem(item) {
-        for (let i = 0; i < basket.length; i++) {
-            if (basket.includes(item) == true) {
-                basket.splice(basket.indexOf([i]), 1);
-                return item;
-            }
-            else {
-                return null;
-            }
-        }
+    if (basket.includes(item) == true) {
+        basket.splice(basket.indexOf(item), 1)
+        return item;
     }
+    else {
+        return null;
+    }
+}
 
-console.log("Checking if removeItem works, should return blankets:", removeItem());
+console.log("Checking if removeItem works:", removeItem('cups'));
 console.log(basket)
