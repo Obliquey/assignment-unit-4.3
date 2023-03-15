@@ -10,9 +10,12 @@ const maxItems = 5;
 // create function addItem, which adds given string input to basket array, returns true
 function addItem (item) {
     // add given item to basket array
-    if (isFull() = false){
+    if (isFull() == false){
         basket.push(item);
         return true;
+    }
+    else if (isFull() == true) {
+        return false;
     }
 }
 addItem('chips');
@@ -49,15 +52,28 @@ console.log(basket);
 // creat function isFull, checks against maxItems if basket array is full
 function isFull() {
     if (basket.length < maxItems) {
-        console.log("You can fit more.");
         return false;
     }
     else {
-        console.log('Too full!')
         return true;
     }
 }
 
-
 console.log("Checking if basket is full:", isFull());
 
+// create function removeItem, to remove the given item from basket array. If no matching item is found within the array, return null
+
+function removeItem(item) {
+        for (let i = 0; i < basket.length; i++) {
+            if (basket.includes(item) == true) {
+                basket.splice(basket.indexOf([i]), 1);
+                return item;
+            }
+            else {
+                return null;
+            }
+        }
+    }
+
+console.log("Checking if removeItem works, should return blankets:", removeItem());
+console.log(basket)
